@@ -1,0 +1,143 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== Animated Gradient Background ===== */
+body {
+  height: 100vh;
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #4facfe, #00f2fe);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Links */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* Hover glow */
+nav a:hover {
+  color: #00f2fe;
+  text-shadow: 0 0 10px #00f2fe;
+}
+
+/* Underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: #00f2fe;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Active link */
+nav a.active {
+  color: #00f2fe;
+}
+
+/* ===== PAGE CONTAINER ===== */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+/* ===== GLASS CARD ===== */
+.page-card {
+  width: 60%;
+  max-width: 700px;
+  padding: 50px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Card animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-card h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.page-card p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ===== BUTTON STYLE ===== */
+.page-card button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #00f2fe;
+  color: black;
+  transition: 0.3s;
+}
+
+.page-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00f2fe;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .page-card {
+    width: 90%;
+    padding: 30px;
+  }
+
+  nav {
+    gap: 20px;
+  }
+}
